@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="TempConvert.js"></script>
+    <script>
+        function computeResult(){
+            var t = document.getElementById('temp').value;
+            var operation = document.getElementById('operation').value;
+            var tc = new TempConvert();/** declare object of class**/
+
+            switch(operation){
+                case 'c':
+                    document.getElementById('result').innerHTML=  tc.toFah(t);
+                    break;
+
+                case 'f':
+                    document.getElementById('result').innerHTML=  tc.toCelsius(t);
+                    break;
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div >
+    <h1>Temperature Converter </h1>
+    <form>
+        <label for="temp">Temperature</label>
+        <input type="text" id="temp"  required />
+        <select id="operation" >
+            <option value="c"> From Fahrenheit to Celsius</option>
+            <option value="f">From Celsius to Fahrenheit</option>
+        </select>
+        <input type="button" value="Compute" onclick="computeResult()"/>
+        <div id="result"></div>
+    </form>
+</div>
+</body>
+</html>
